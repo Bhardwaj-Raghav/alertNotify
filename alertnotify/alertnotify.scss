@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+#alertNotify_main_container {
+  font-family: 'Ubuntu', sans-serif;
+  opacity: 1;
+  position: fixed;
+  z-index: 999999999;
+  color: white;
+  transition: opacity .5s ease-in;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &.top_right {
+    top: 12px;
+    right: 12px;
+  }
+  &.top_left {
+    top: 12px;
+    left: 12px;
+  }
+  &.bottom_right {
+    bottom: 12px;
+    right: 12px;
+  }
+  &.bottom_left {
+    bottom: 12px;
+    left: 12px;
+  }
+  .alertNotify_ {
+    max-width: 300px;
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out;
+    transform: translate(0px);
+    opacity: 1;
+    .alertNotify_body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      .alertNotify_icon_text_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px 0;
+        .alertNotify_type_icon_container {
+          .alertNotify_type_icon {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            color: white;
+            font-weight: 900;
+            font-size: 15px;
+          }
+        }
+        .alertNotify_text_div {
+          padding: 0 10px;
+          .alertNotify_text {
+            color: white;
+            word-break: break-all;
+            font-size: 16px;
+            .alertNotify_notify-link-btn {
+              padding: 3px;
+              text-transform: uppercase;
+              color: #ea0505;
+            }
+          }
+        }
+      }
+      .alertNotify_close_notification_container {
+        .alertNotify_close_notification {
+          height: 35px;
+          padding: 0 10px;
+          color: white;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    &:hover {
+      .alertNotify_body {
+        .alertNotify_icon_text_container {
+          .alertNotify_close_notification {
+          }
+        }
+      }
+    }
+    &.animation_left {
+      transition: all 0.25s ease-in;
+      transform: translateX(-27px);
+      opacity: 0;
+    }
+    &.animation_right {
+      transition: all 0.25s ease-in;
+      transform: translateX(27px);
+      opacity: 0;
+    }
+    &.animation_up {
+      transition: all 0.25s ease-in;
+      transform: translateY(-27px);
+      opacity: 0;
+    }
+    &.animation_down {
+      transition: all 0.25s ease-in;
+      transform: translateY(27px);
+      opacity: 0;
+    }
+  }
+}
